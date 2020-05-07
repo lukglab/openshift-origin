@@ -40,10 +40,10 @@ else
 	exit 20
 fi
 
-# Install Docker 1.13.x
-echo $(date) " - Installing Docker 1.13.x"
+# Install Docker
+echo $(date) " - Installing Docker"
 
-yum -y install docker
+yum install docker
 sed -i -e "s#^OPTIONS='--selinux-enabled'#OPTIONS='--selinux-enabled --insecure-registry 172.30.0.0/16'#" /etc/sysconfig/docker
 
 echo $(date) " - Docker installed successfully"
