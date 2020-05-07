@@ -45,7 +45,7 @@ echo $(date) " - Installing Docker"
 
 yum -y install docker
 sed -i -e "s#^OPTIONS='--selinux-enabled'#OPTIONS='--selinux-enabled --insecure-registry 172.30.0.0/16'#" /etc/sysconfig/docker
-yum -y install container-storage-setup
+
 echo $(date) " - Docker installed successfully"
 
 # Create thin pool logical volume for Docker
